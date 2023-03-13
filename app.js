@@ -20,9 +20,10 @@ api.post("/search", async (request, response) => {
     const completion = await openAIApi.createCompletion({
         model: "text-davinci-003",
         prompt: request.body.userInput,
-        temperature: 0.6,
+        temperature: 0.8,
     });
 
+    console.log(completion.data);
     response.send(completion.data.choices[0]);
 });
 

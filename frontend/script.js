@@ -25,6 +25,14 @@ inputForm.addEventListener("submit", (event) => {
     // call the api and pass it in the user input
     searchUserInput(inputValue);
 
+    newSearch.addEventListener("click", () => {
+        searchUserInput(inputValue);
+
+        // hide the recent searches
+        separator.classList.add("hide");
+        recentSearchesContainer.classList.add("hide");
+    });
+
     // clear the userInput
     inputForm.reset();
     inputTextField.blur();
@@ -39,10 +47,15 @@ inputTextField.addEventListener("focusin", () => {
     }
 });
 
-// hide the recent searches whenever the user is no longer on the input field
-inputTextField.addEventListener("focusout", () => {
-    separator.classList.add("hide");
-    recentSearchesContainer.classList.add("hide");
+document.addEventListener("click", (event) => {
+    const inputContainer = document.getElementById("input-container");
+    if (
+        event.target !== inputContainer &&
+        !inputContainer.contains(event.target)
+    ) {
+        separator.classList.add("hide");
+        recentSearchesContainer.classList.add("hide");
+    }
 });
 
 async function searchUserInput(userInput) {

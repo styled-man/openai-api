@@ -6,6 +6,11 @@
     --accent-color: #fece02;
 }
 
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
 * {
     font-size: 1.25rem;
     margin: 0;
