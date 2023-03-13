@@ -1,0 +1,119 @@
+:root {
+    --background-color: #191919;
+    --container-color: #333333;
+    --container-color-secondary: #585858;
+    --text-color: #ffffff;
+    --accent-color: #fece02;
+}
+
+* {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+.title {
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem;
+}
+
+.input-container {
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    width: 40rem;
+    max-width: 90vw;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+#input-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.input {
+    color: var(--text-color);
+    background-color: var(--container-color);
+    outline: none;
+    border: none;
+    width: 100%;
+    opacity: 0.4;
+}
+
+.input:focus::placeholder {
+    color: var(--container-color-secondary);
+}
+
+.input:focus {
+    opacity: 1;
+}
+
+#separator {
+    border: 1px solid var(--container-color-secondary);
+}
+
+#search-icon {
+    cursor: pointer;
+    color: var(--container-color-secondary);
+}
+
+#recent-searches-container {
+    padding: 1rem;
+}
+
+.recent-search {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.recent-search:hover {
+    background-color: var(--container-color-secondary);
+    color: var(--accent-color);
+}
+
+.recent-search-title {
+    color: var(--container-color-secondary);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+/*  */
+
+#answer-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.chatgpt-logo {
+    background-color: #10a37f;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+}
+
+#answer {
+    width: 35rem;
+}
+
+#answer::first-letter {
+    text-transform: capitalize;
+}
+
+.hide {
+    display: none;
+}
