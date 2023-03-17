@@ -24,6 +24,12 @@ body {
         sans-serif;
 }
 
+button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
 .title {
     color: var(--accent-color);
     text-align: center;
