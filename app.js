@@ -21,6 +21,7 @@ api.post("/search", async (request, response) => {
         model: "text-davinci-003",
         prompt: request.body.userInput,
         temperature: 0.8,
+        max_tokens: 100
     });
 
     console.log(completion.data);

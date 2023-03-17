@@ -65,7 +65,7 @@ async function searchUserInput(userInput) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            userInput: "Answer this question in 100 words: " + userInput,
+            userInput: "Answer this question: " + userInput,
         }),
     });
 
