@@ -45,6 +45,7 @@ inputTextField.addEventListener("focusin", () => {
     recentSearchesContainer.classList.remove("hide");
 });
 
+// close the recent searches box whenever the user clicks on a part of the screen that is outside of that box
 document.addEventListener("click", (event) => {
     const inputContainer = document.getElementById("input-container");
     if (
