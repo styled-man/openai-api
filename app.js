@@ -27,6 +27,4 @@ api.post("/search", async (request, response) => {
     response.send(completion.data.choices[0]);
 });
 
-api.post("/suggestion", (request, response) => {});
-
 api.listen(port);
