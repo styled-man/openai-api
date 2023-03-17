@@ -19,7 +19,7 @@ api.use(express.static("frontend"));
 api.post("/search", async (request, response) => {
     const completion = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: request.body.userInput,
+        prompt: "Answer this question: " + request.body.userInput + "?",
         temperature: 0.8,
         max_tokens: 100
     });
