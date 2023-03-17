@@ -2,6 +2,7 @@ const inputForm = document.getElementById("input-form");
 const inputTextField = document.getElementById("search-input");
 const separator = document.getElementById("separator");
 const answer = document.getElementById("answer");
+const recentSearches = document.getElementById("recent-searches");
 const recentSearchesContainer = document.getElementById(
     "recent-searches-container"
 );
@@ -20,7 +21,7 @@ inputForm.addEventListener("submit", (event) => {
     const newSearch = document.createElement("h3");
     newSearch.textContent = inputValue;
     newSearch.classList.add("recent-search");
-    recentSearchesContainer.appendChild(newSearch);
+    recentSearches.prepend(newSearch);
 
     // call the api and pass it in the user input
     searchUserInput(inputValue);
@@ -40,11 +41,8 @@ inputForm.addEventListener("submit", (event) => {
 
 // show the recent searches whenever the user clicks on the input field
 inputTextField.addEventListener("focusin", () => {
-    // if there are any previous searches
-    if (recentSearchesContainer.childElementCount > 1) {
-        separator.classList.remove("hide");
-        recentSearchesContainer.classList.remove("hide");
-    }
+    separator.classList.remove("hide");
+    recentSearchesContainer.classList.remove("hide");
 });
 
 document.addEventListener("click", (event) => {
@@ -67,7 +65,7 @@ async function searchUserInput(userInput) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            userInput: "Answer this question: " + userInput,
+            userInput: "Answer this question in 100 words: " + userInput,
         }),
     });
 
