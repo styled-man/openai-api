@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node app.js",
-        "dev": "nodemon app.js"
+        "dev": "nodemon --exec babel-node app.js"
     },
     "keywords": [],
     "author": "",
@@ -17,6 +17,9 @@
         "openai": "^3.2.1"
     },
     "devDependencies": {
+        "@babel/core": "^7.21.3",
+        "@babel/node": "^7.20.7",
+        "@babel/preset-env": "^7.20.2",
         "nodemon": "^2.0.21"
     }
 }
